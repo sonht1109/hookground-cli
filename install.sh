@@ -1,5 +1,6 @@
 REPO=hookground-cli
 BINARY_NAME="tunnel"
+VERSION="v0.0.1"
 
 detect_platform() {
   local unameOut="$(uname -s)"
@@ -58,7 +59,7 @@ if [[ "$PLATFORM" == *"windows"* ]]; then
 fi
 
 echo "Downloading the binary for ${PLATFORM}..."
-DOWNLOAD_URL="https://github.com/${REPO}/releases/latest/download/${FILENAME}"
+DOWNLOAD_URL="https://github.com/sonht1109/${REPO}/releases/latest/download/${FILENAME}"
 curl -L -o "${BINARY_NAME}" "${DOWNLOAD_URL}"
 
 if [[ $? -ne 0 ]]; then
