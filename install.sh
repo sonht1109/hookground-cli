@@ -70,4 +70,4 @@ fi
 chmod +x "${BINARY_NAME}"
 
 echo "Running the binary..."
-./"${BINARY_NAME}" --t "${TOKEN}" --h="{$URL}"
+./"${BINARY_NAME}" --t "${TOKEN}" --h="${URL}"
