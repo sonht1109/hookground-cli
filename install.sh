@@ -66,7 +66,7 @@ if [[ $? -ne 0 ]]; then
   exit 1
 fi
 
-chmod +x "${BINARY_NAME}"
+chmod +x "${FILENAME}"
 
 echo "Running the binary..."
-./"${BINARY_NAME}" --t "${TOKEN}" --h="{$URL}"
+./"${FILENAME}" --t "${TOKEN}" --h="{$URL}"
