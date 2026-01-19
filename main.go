@@ -45,7 +45,11 @@ func poll(host, key, targetHost string) {
 		body, _ := io.ReadAll(resp.Body)
 		resp.Body.Close()
 
-		if len(body) == 0 {
+		if resp.StatusCode != 200 {
+			log.Println("Error polling server, status code:", resp.StatusCode)
+		}
+
+		if len(body) == 0 || resp.StatusCode != 200 {
 			time.Sleep(2 * time.Second) // No request, retry after 2s
 			continue
 		}
