@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"io"
@@ -47,6 +48,20 @@ func poll(host, key, targetHost string) {
 		if len(body) == 0 {
 			time.Sleep(2 * time.Second) // No request, retry after 2s
 			continue
+		}
+
+		// Parse the response to extract payload if it exists
+		var data map[string]interface{}
+		if err := json.Unmarshal(body, &data); err == nil {
+			if payload, ok := data["payload"]; ok {
+				// Forward only the payload field
+				payloadBytes, err := json.Marshal(payload)
+				if err != nil {
+					log.Println("Error marshaling payload:", err)
+					continue
+				}
+				body = payloadBytes
+			}
 		}
 
 		fmt.Printf("🚚 Received webhook from server: \n%v\n\n", string(body))
