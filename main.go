@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	var host = flag.String("host", "https://api-hookground.sonht.io.vn", "server hostname to use")
+	var host = flag.String("host", "https://api-hookground.sonht.top", "server hostname to use")
 
 	// server args
 	var key = flag.String("t", "", "token to identify the user")

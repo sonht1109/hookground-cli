@@ -1,10 +1,10 @@
 # Hookground CLI
-This is a CLI tool for [hookground](https://hookground.sonht.io.vn) which allows you to forward webhook to your local server
+This is a CLI tool for [hookground](https://hookground.sonht.top) which allows you to forward webhook to your local server
 
 >This project is only for study purpose.
 
 ### Installation
-1. Go to https://hookground.sonht.io.vn and try receiving some webhooks
+1. Go to https://hookground.sonht.top and try receiving some webhooks
 2. Visit webhook detail
 3. Run CLI
 ```bash
